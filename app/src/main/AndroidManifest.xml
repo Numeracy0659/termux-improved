@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.numeracy.termuxide">
+
+    <!-- Permissions -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    
+    <!-- Termux Integration Permissions -->
+    <uses-permission android:name="com.termux.permission.RUN_COMMAND" />
+    
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.TermuxImprovedIDE"
+        android:usesCleartextTraffic="true">
+
+        <!-- Main Activity -->
+        <activity
+            android:name=".ui.activities.MainActivity"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Editor Activity -->
+        <activity
+            android:name=".ui.activities.EditorActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <!-- Terminal Activity -->
+        <activity
+            android:name=".ui.activities.TerminalActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <!-- File Explorer Activity -->
+        <activity
+            android:name=".ui.activities.ExplorerActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <!-- Project Settings Activity -->
+        <activity
+            android:name=".ui.activities.ProjectSettingsActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <!-- Preferences Activity -->
+        <activity
+            android:name=".ui.activities.PreferencesActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <!-- Services -->
+        <service
+            android:name=".services.CompilerService"
+            android:exported="false" />
+
+        <service
+            android:name=".services.InterpreterService"
+            android:exported="false" />
+
+        <service
+            android:name=".services.BuildService"
+            android:exported="false" />
+
+        <service
+            android:name=".services.ProjectService"
+            android:exported="false" />
+
+        <service
+            android:name=".services.DebugService"
+            android:exported="false" />
+
+        <service
+            android:name=".termux.TermuxIntegrationService"
+            android:exported="false" />
+
+    </application>
+
+</manifest>
