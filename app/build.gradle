@@ -1,1 +1,35 @@
-plugins {\n    id 'com.android.application'\n}\n\nandroid {\n    namespace 'com.numeracy.termuxide'\n    compileSdk 33\n\n    defaultConfig {\n        applicationId 'com.numeracy.termuxide'\n        minSdk 24\n        targetSdk 33\n        versionCode 1\n        versionName '0.1.0-alpha'\n\n        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'\n    }\n\n    buildTypes {\n        release {\n            minifyEnabled false\n            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'\n        }\n        debug {\n            debuggable true\n        }\n    }\n\n    compileOptions {\n        sourceCompatibility JavaVersion.VERSION_11\n        targetCompatibility JavaVersion.VERSION_11\n    }\n\n    buildFeatures {\n        viewBinding true\n    }\n}\n\ndependencies {\n    // Core Android\n    implementation 'androidx.appcompat:appcompat:1.6.1'\n    implementation 'com.google.android.material:material:1.9.0'\n    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'\n    \n    // Jetpack\n    implementation 'androidx.lifecycle:lifecycle-runtime:2.6.1'\n    implementation 'androidx.lifecycle:lifecycle-viewmodel:2.6.1'\n    implementation 'androidx.navigation:navigation-fragment:2.6.0'\n    implementation 'androidx.navigation:navigation-ui:2.6.0'\n    \n    // Database\n    implementation 'androidx.room:room-runtime:2.5.2'\n    annotationProcessor 'androidx.room:room-compiler:2.5.2'\n    \n    // Testing\n    testImplementation 'junit:junit:4.13.2'\n    androidTestImplementation 'androidx.test.ext:junit:1.1.5'\n    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'\n    \n    // Process execution and I/O\n    implementation 'commons-io:commons-io:2.11.0'\n}\n
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.numeracy.termuxide'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId 'com.numeracy.termuxide'
+        minSdk 24
+        targetSdk 33
+        versionCode 1
+        versionName '0.1.0-alpha'
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.9.0'
+    testImplementation 'junit:junit:4.13.2'
+}

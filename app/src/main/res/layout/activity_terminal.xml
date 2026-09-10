@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:padding="12dp">
+    <EditText android:id="@+id/terminal_command" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Enter a command" android:singleLine="true" android:fontFamily="monospace"/>
+    <Button android:id="@+id/run_command" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Run"/>
+    <TextView android:id="@+id/terminal_output" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:fontFamily="monospace" android:textIsSelectable="true" android:padding="8dp"/>
+</LinearLayout>

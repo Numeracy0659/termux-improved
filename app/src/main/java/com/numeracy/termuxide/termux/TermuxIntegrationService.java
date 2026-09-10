@@ -1,20 +1,26 @@
 package com.numeracy.termuxide.termux;
 
+import android.app.Service;
 import android.content.Context;
-import android.os.Build;
+import android.content.Intent;
+import android.os.IBinder;
 import android.util.Log;
 
 import com.numeracy.termuxide.utils.ProcessExecutor;
 
-public class TermuxIntegrationService {
+public class TermuxIntegrationService extends Service {
     private static final String TAG = "TermuxIntegration";
     private Context context;
     private ProcessExecutor executor;
 
-    public TermuxIntegrationService(Context context) {
-        this.context = context;
-        this.executor = new ProcessExecutor(context);
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        this.context = getApplicationContext();
+        this.executor = new ProcessExecutor(this);
     }
+
+    @Override public IBinder onBind(Intent intent) { return null; }
 
     public boolean isTermuxInstalled() {
         try {
@@ -43,6 +49,10 @@ public class TermuxIntegrationService {
     }
 
     public void installPackage(String packageName) {
+        if (packageName == null || !packageName.matches("[a-zA-Z0-9+._-]+")) {
+            Log.e(TAG, "Invalid package name");
+            return;
+        }
         try {
             executor.execute("apt-get update && apt-get install -y " + packageName);
         } catch (Exception e) {

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:padding="24dp">
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Termux Improved IDE" android:textSize="24sp" android:textStyle="bold" android:paddingBottom="24dp"/>
+    <Button android:id="@+id/open_editor" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Open Editor"/>
+    <Button android:id="@+id/open_terminal" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Open Terminal"/>
+    <Button android:id="@+id/open_explorer" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Project Explorer"/>
+</LinearLayout>
